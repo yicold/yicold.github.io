@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/产品/" style="font-size: 10px;">产品</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/随笔，产品/" style="font-size: 10px;">随笔，产品</a>
+						<a href="/tags/产品/" style="font-size: 20px;">产品</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/随笔，产品/" style="font-size: 10px;">随笔，产品</a>
 					</div>
 				</section>
 				
@@ -189,6 +189,121 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-widgets" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/03/widgets/" class="article-date">
+  	<time datetime="2016-03-03T07:25:18.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/03/widgets/">修改justinmind原生部件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对justinmind的研究一直未曾停掉，而且最近时间充裕，于是想要在justinmind上创建个人部件库，方便以后的工作使用。  </p>
+<p>之前已经在Axure上完成类似的工作，而且统一风格为简约的黑白风格，即使用十六进制色值<code>666666</code>作为主色调，<code>999999</code>作为次色调。 </p>
+<p>面对全英文版的justinmind，一时觉得力不从心，本着不能解决问题的产品经理不是好的程序员的想法，开始使用各种关键词百度。</p>
+<p>首先是了解到justinmind是支持新增自己创建部件库的，于是心一横，想人肉出一套，但是在实际操作中却是泪流满面。  </p>
+<blockquote>
+<p>操作步骤：打开justinmind→打开或新建<code>.vp</code>文件→点击<code>widgets</code>选择<code>new widgets library</code>→输入名称完成创建</p>
+</blockquote>
+<p>接下来，开启人肉编辑模式，将修改好的部件拖到创建区域…  </p>
+<p>制作了两三个后，突然感觉——这是产品的耻辱，竟然没有想到更好的办法解决问题，在产品经理的世界观里绝对不允许！  </p>
+<p>开始冷静地分析：  </p>
+<ul>
+<li>必要性<ol>
+<li>统一的部件库“利在当代，功在千秋”</li>
+<li>纯人肉编辑无法完成缩略图的搭配</li>
+</ol>
+</li>
+<li>可行性<ol>
+<li>Axure支持编辑原生部件样式，说不定justinmind也可以</li>
+<li>原生部件都有缩略图，可以作为切入点</li>
+</ol>
+</li>
+</ul>
+<p>于是，开始翻看justinmind的安装位置文件，这个时候文件夹<code>widgets</code>深深滴吸引了我的目光。点开后，发现这里有大量的缩略图，心想：卧槽！这样编辑的时候不就可以添加这些图片了！  </p>
+<p>随即，我对这个想法嗤之以鼻，因为我还有更大的发现。  </p>
+<blockquote>
+<p>路径：C:\Program Files (x86)\Justinmind\Justinmind Prototyper 7.1.0\widgets\ui\10ed0e22-75e0-459e-aa12-1e1c596d67c8</p>
+</blockquote>
+<p>在这里，有一个<code>.xml</code>文件，体积还很大，难道？莫非！一定是！！原生部件的秘密一定藏在这里！！！  </p>
+<p>小手一点，使用<code>notepad++</code>打开<code>widgets.xml</code>,迎面而来是几万行代码…  </p>
+<p>部分代码：<code>BorderStyle radius=&quot;0&quot; leftColor=&quot;0r0g0b&quot; topColor=&quot;0r0g0b&quot;</code></p>
+<p>代码使用十六进制色值对原生部件库进行控制，有点类似于CSS，根据当年自学的一点HTML语言，顿时胸中有了思路——可以使用<code>notepad++</code>进行色值的替换，如此不就可以实现批量修改而且无需担心缩略图匹配的问题了。</p>
+<p>工具：notepad++，负责打开文件，执行查找和替换操作；<a href="http://www.sioe.cn/yingyong/yanse-rgb-16/" target="_blank" rel="external">在线十六进制颜色转RGB工具</a>；</p>
+<p>步骤：</p>
+<ol>
+<li>开启两个justinmind窗口，以便做A/B检验  </li>
+<li>A窗口获取原生部件颜色值（十六进制），copy至在线工具进行转换获得颜色值（RGB）  </li>
+<li>修改RGB为代码格式，即将逗号分别改为字母rgb，符合格式方可替换  </li>
+<li>使用<code>notepad++</code>打开<code>widgets.xml</code>文件，使用快捷键<code>ctrl+H</code>  </li>
+<li>完成替换后，快捷键<code>ctrl+S</code>保存  </li>
+<li>B窗口重新加载修改的部件库，拖拽部件进行检验  </li>
+<li>以上操作按照步骤循环检验，直至所有部件色值均修改完毕  </li>
+</ol>
+<p>修改记录：</p>
+<pre><code>蓝色：<span class="number">007</span>DFF <span class="number">0</span>, <span class="number">125</span>, <span class="number">255</span> 灰色：<span class="number">666666</span> <span class="number">102</span>, <span class="number">102</span>, <span class="number">102</span>
+<span class="number">0</span>r125g255b   <span class="number">102</span>r102g102b
+
+淡蓝：<span class="number">1174</span>C1 <span class="number">17</span>, <span class="number">116</span>, <span class="number">193</span> 浅灰：<span class="number">999999</span> <span class="number">153</span>, <span class="number">153</span>, <span class="number">153</span>
+<span class="number">17</span>r116g193b  <span class="number">153</span>r153g153b
+</code></pre><p>修改完色值，还不算完美。  </p>
+<p>Android部件库遵循 material design 设计规范，因此有些部件是有阴影的。  </p>
+<p>接下来，就让我们把阴影全部干掉吧，将这个世界彻底推向二维。  </p>
+<p>工具：notepad++</p>
+<p>步骤：  </p>
+<ol>
+<li>替换<code>&lt;text enable=&quot;true&quot;``&lt;box enable=&quot;true&quot;</code>为<code>&lt;text enable=&quot;false&quot;``&lt;box enable=&quot;false&quot;</code>  </li>
+<li>修改后保存，重新加载修改的部件</li>
+</ol>
+<p>如此，原生部件统一风格工作就完成了。</p>
+<p>最后要说的：</p>
+<p>在justinmind工作区域<code>properties</code>部件属性区域有一个编辑按钮，可以对原生部件进行编辑并保存，如果不想如此大费周章替换，可以试试这个方法。</p>
+<p>以上，以后会提供更多justinmind的使用技巧，共进步！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/产品/">产品</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Artifact-of-product-manager" class="article article-type-post" itemscope itemprop="blogPost">
   
