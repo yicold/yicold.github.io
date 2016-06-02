@@ -3,33 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>快速绘制原型的几个感悟 | PM and Code change the world</title>
+  <title>如何使用SVN在Axure中协作办公 | PM and Code change the world</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从刚开始接触项目的不知所措到如今独立完成项目的游刃有余，回首过去的半载岁月，不枉悟出几条心得。其实原型这些事，多是个人习惯，输出物易于理解，能够表达想法，这些才是关键。
-脑图通过脑图整理结构，推荐使用百度脑图。
-
-流程图通过流程图梳理交互设计，避免遗漏，推荐使用Axure RP自带流程部件库。
-常用元素移动端：iOS、Android GUI; bootstrap GUI;按钮、图标、输入框、文本等">
+  <meta name="description" content="科普SVN是Subversion的简称，是一个开放源代码的版本控制系统，相较于RCS、CVS，它采用了分支管理系统，它的设计目标就是取代CVS。互联网上很多版本控制服务已从CVS迁移到Subversion。说得简单一点SVN就是用于多个人共同开发同一个项目，共用资源的目的。
+百度百科-SVN
+TaoCode免费的SVN服务，为淘宝内部项目，从安全性、稳定性考虑，可暂时将项目托管于此。
+说明：务必牢">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速绘制原型的几个感悟">
-<meta property="og:url" content="http://yoursite.com/2016/03/17/Rapid prototyping/index.html">
+<meta property="og:title" content="如何使用SVN在Axure中协作办公">
+<meta property="og:url" content="http://yoursite.com/2016/06/02/axure-svn-share/index.html">
 <meta property="og:site_name" content="PM and Code change the world">
-<meta property="og:description" content="从刚开始接触项目的不知所措到如今独立完成项目的游刃有余，回首过去的半载岁月，不枉悟出几条心得。其实原型这些事，多是个人习惯，输出物易于理解，能够表达想法，这些才是关键。
-脑图通过脑图整理结构，推荐使用百度脑图。
-
-流程图通过流程图梳理交互设计，避免遗漏，推荐使用Axure RP自带流程部件库。
-常用元素移动端：iOS、Android GUI; bootstrap GUI;按钮、图标、输入框、文本等">
-<meta property="og:image" content="http://yicold.github.io/img/md/naotu.png">
-<meta property="og:image" content="http://yicold.github.io/img/md/bujian.png">
-<meta property="og:image" content="http://yicold.github.io/img/md/align.png">
-<meta property="og:updated_time" content="2016-03-17T04:46:37.699Z">
+<meta property="og:description" content="科普SVN是Subversion的简称，是一个开放源代码的版本控制系统，相较于RCS、CVS，它采用了分支管理系统，它的设计目标就是取代CVS。互联网上很多版本控制服务已从CVS迁移到Subversion。说得简单一点SVN就是用于多个人共同开发同一个项目，共用资源的目的。
+百度百科-SVN
+TaoCode免费的SVN服务，为淘宝内部项目，从安全性、稳定性考虑，可暂时将项目托管于此。
+说明：务必牢">
+<meta property="og:image" content="http://yicold.github.io/img/axure-svn/get.png">
+<meta property="og:image" content="http://yicold.github.io/img/axure-svn/tianxie.png">
+<meta property="og:image" content="http://yicold.github.io/img/axure-svn/zhanghu.png">
+<meta property="og:image" content="http://yicold.github.io/img/axure-svn/loading.png">
+<meta property="og:image" content="http://yicold.github.io/img/axure-svn/getsuccess.png">
+<meta property="og:updated_time" content="2016-06-02T04:10:56.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速绘制原型的几个感悟">
-<meta name="twitter:description" content="从刚开始接触项目的不知所措到如今独立完成项目的游刃有余，回首过去的半载岁月，不枉悟出几条心得。其实原型这些事，多是个人习惯，输出物易于理解，能够表达想法，这些才是关键。
-脑图通过脑图整理结构，推荐使用百度脑图。
-
-流程图通过流程图梳理交互设计，避免遗漏，推荐使用Axure RP自带流程部件库。
-常用元素移动端：iOS、Android GUI; bootstrap GUI;按钮、图标、输入框、文本等">
+<meta name="twitter:title" content="如何使用SVN在Axure中协作办公">
+<meta name="twitter:description" content="科普SVN是Subversion的简称，是一个开放源代码的版本控制系统，相较于RCS、CVS，它采用了分支管理系统，它的设计目标就是取代CVS。互联网上很多版本控制服务已从CVS迁移到Subversion。说得简单一点SVN就是用于多个人共同开发同一个项目，共用资源的目的。
+百度百科-SVN
+TaoCode免费的SVN服务，为淘宝内部项目，从安全性、稳定性考虑，可暂时将项目托管于此。
+说明：务必牢">
   
     <link rel="alternative" href="/atom.xml" title="PM and Code change the world" type="application/atom+xml">
   
@@ -204,11 +203,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Rapid prototyping" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-axure-svn-share" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/17/Rapid prototyping/" class="article-date">
-  	<time datetime="2016-03-17T04:46:37.699Z" itemprop="datePublished">2016-03-17</time>
+      <a href="/2016/06/02/axure-svn-share/" class="article-date">
+  	<time datetime="2016-06-02T03:04:10.000Z" itemprop="datePublished">2016-06-02</time>
 </a>
     </div>
   
@@ -221,7 +220,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      快速绘制原型的几个感悟
+      如何使用SVN在Axure中协作办公
     </h1>
   
 
@@ -230,7 +229,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/产品/">产品</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
 	</div>
 
         
@@ -241,25 +240,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从刚开始接触项目的不知所措到如今独立完成项目的游刃有余，回首过去的半载岁月，不枉悟出几条心得。其实原型这些事，多是个人习惯，输出物易于理解，能够表达想法，这些才是关键。</p>
-<h3 id="脑图">脑图</h3><p>通过脑图整理结构，推荐使用<a href="http://naotu.baidu.com" target="_blank" rel="external">百度脑图</a>。</p>
-<p><img src="http://yicold.github.io/img/md/naotu.png" alt="百度脑图"></p>
-<h3 id="流程图">流程图</h3><p>通过流程图梳理交互设计，避免遗漏，推荐使用Axure RP自带流程部件库。</p>
-<h3 id="常用元素">常用元素</h3><p>移动端：iOS、Android GUI; bootstrap GUI;按钮、图标、输入框、文本等元素统一风格。</p>
-<p><img src="http://yicold.github.io/img/md/bujian.png" alt="部件库"></p>
-<h3 id="栅格">栅格</h3><p>使用栅格更容易对齐各种元素，使得原型视觉效果比较好。</p>
-<h3 id="母版">母版</h3><p>重复使用的元素千万不要使用复制，记得使用母版！</p>
-<h3 id="组合">组合</h3><p>需要多选的元素使用组合，再也不用一个一个的点了。</p>
-<h3 id="对齐">对齐</h3><p>对齐是处女座的福音！</p>
-<p><img src="http://yicold.github.io/img/md/align.png" alt="对齐"></p>
-<h3 id="原则">原则</h3><p>在以后的工作中，谨记以下原则：</p>
-<ol>
-<li>只表意，不表形</li>
-<li>统一元素，勿用实物</li>
-<li>要不要？不要！</li>
-<li>前端后台</li>
+        <h3 id="科普">科普</h3><p>SVN是Subversion的简称，是一个开放源代码的版本控制系统，相较于RCS、CVS，它采用了分支管理系统，它的设计目标就是取代CVS。互联网上很多版本控制服务已从CVS迁移到Subversion。说得简单一点SVN就是用于多个人共同开发同一个项目，共用资源的目的。</p>
+<p><a href="http://baike.baidu.com/link?url=mDIqEmBmDRH-iiJIQ50G8NGuPrNFKbDGtZev_PqB4Gi3G0KmjpROJ3hQ5XJib7Bl6Q49_2Onb5sUYrb0jV1CUK" target="_blank" rel="external">百度百科-SVN</a></p>
+<h3 id="TaoCode">TaoCode</h3><p>免费的SVN服务，为淘宝内部项目，从安全性、稳定性考虑，可暂时将项目托管于此。</p>
+<p><strong>说明：务必牢记用户名及密码，否则无权限获取及编辑项目</strong></p>
+<p><a href="http://code.taobao.org" target="_blank" rel="external">TaoCode-官网</a></p>
+<h3 id="获取教程">获取教程</h3><ol>
+<li>获取项目；</li>
 </ol>
-<p>以上，仅作为个人工作总结，共勉！</p>
+<p><img src="http://yicold.github.io/img/axure-svn/get.png" alt="获取项目"></p>
+<ol>
+<li>填写信息；</li>
+</ol>
+<p><img src="http://yicold.github.io/img/axure-svn/tianxie.png" alt="填写信息"></p>
+<ol>
+<li>登录账户；</li>
+</ol>
+<p><img src="http://yicold.github.io/img/axure-svn/zhanghu.png" alt="登录账户"></p>
+<ol>
+<li>等待获取；</li>
+</ol>
+<p><img src="http://yicold.github.io/img/axure-svn/loading.png" alt="等待获取"></p>
+<ol>
+<li>获取成功；</li>
+</ol>
+<p><img src="http://yicold.github.io/img/axure-svn/getsuccess.png" alt="获取成功"></p>
+<h3 id="常见问题">常见问题</h3><p>待完善…</p>
 
       
     </div>
@@ -269,18 +275,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/21/management/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          项目管理工具
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/16/Prototype-specification/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">产品原型设计规范V1.0</div>
+    <a href="/2016/04/21/management/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">项目管理工具</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -309,7 +306,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Rapid prototyping" data-title="快速绘制原型的几个感悟" data-url="http://yoursite.com/2016/03/17/Rapid prototyping/"></div>
+	<div class="ds-thread" data-thread-key="axure-svn-share" data-title="如何使用SVN在Axure中协作办公" data-url="http://yoursite.com/2016/06/02/axure-svn-share/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
